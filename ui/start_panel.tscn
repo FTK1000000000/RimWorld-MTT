@@ -1,0 +1,217 @@
+[gd_scene load_steps=10 format=3 uid="uid://brgjl2jui0nlu"]
+
+[ext_resource type="Theme" uid="uid://c2elaum8hpcao" path="res://theme/main.tres" id="1_w2yu0"]
+[ext_resource type="Script" path="res://script/ui/top_menu.gd" id="3_8pud3"]
+[ext_resource type="StyleBox" uid="uid://dhpiaqpieaces" path="res://theme_resource/current/main.tres" id="4_trjwe"]
+[ext_resource type="Script" path="res://script/ui/resource_manager.gd" id="5_kerkt"]
+[ext_resource type="Theme" uid="uid://dsforg8tra7c3" path="res://theme/small_button.tres" id="6_2r6y7"]
+[ext_resource type="StyleBox" uid="uid://xncnupe0wl4f" path="res://theme_resource/current/minor.tres" id="6_okk0b"]
+[ext_resource type="Script" path="res://script/ui/main_panel.gd" id="7_5bpau"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gghis"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4t4xj"]
+
+[node name="StartPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w2yu0")
+theme_override_styles/panel = ExtResource("4_trjwe")
+metadata/_edit_vertical_guides_ = [288.0]
+metadata/_edit_horizontal_guides_ = [32.0]
+
+[node name="TopMenu" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gghis")
+script = ExtResource("3_8pud3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBar" type="MenuBar" parent="TopMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Preference" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar"]
+item_count = 3
+item_0/text = "Theme"
+item_1/text = "language"
+item_1/id = 1
+item_2/text = "Project file style"
+item_2/id = 2
+
+[node name="Theme" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar/Preference"]
+item_count = 2
+item_0/text = "Dark"
+item_1/text = "Light"
+item_1/id = 1
+
+[node name="Language" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar/Preference"]
+auto_translate_mode = 1
+item_count = 3
+item_0/text = "English"
+item_1/text = "Spañol"
+item_1/id = 1
+item_2/text = "简体中文"
+item_2/id = 2
+
+[node name="ProjectFileStyle" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar/Preference"]
+item_count = 2
+item_0/text = "Tight"
+item_1/text = "Loose"
+item_1/id = 1
+
+[node name="File" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar"]
+item_count = 4
+item_0/text = "Import pack"
+item_1/text = "Open config folder"
+item_1/id = 1
+item_2/text = "Open steam mods folder"
+item_2/id = 2
+item_3/text = "Open local mods folder"
+item_3/id = 3
+
+[node name="ColorRect" type="ColorRect" parent="TopMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0.301961, 0.301961, 0.301961, 1)
+
+[node name="ResourceManager" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(288, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.059
+anchor_right = 0.3
+anchor_bottom = 1.0
+offset_top = 0.139997
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("6_okk0b")
+script = ExtResource("5_kerkt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResourceManager"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tools" type="HBoxContainer" parent="ResourceManager/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="CleanButton" type="Button" parent="ResourceManager/VBoxContainer/Tools"]
+layout_mode = 2
+theme = ExtResource("6_2r6y7")
+text = "Clean"
+
+[node name="SelectAllButton" type="Button" parent="ResourceManager/VBoxContainer/Tools"]
+layout_mode = 2
+theme = ExtResource("6_2r6y7")
+text = "Select all"
+
+[node name="LlaTcelesButton" type="Button" parent="ResourceManager/VBoxContainer/Tools"]
+layout_mode = 2
+theme = ExtResource("6_2r6y7")
+text = "lla tceleS"
+
+[node name="Filter" type="LineEdit" parent="ResourceManager/VBoxContainer/Tools"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Filter"
+
+[node name="DefsTree" type="Tree" parent="ResourceManager/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+allow_reselect = true
+hide_root = true
+select_mode = 2
+
+[node name="Tip" type="Label" parent="ResourceManager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -18.5
+offset_right = 102.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You can import pack directory by drop to the window."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MainPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.059
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.139997
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4t4xj")
+script = ExtResource("7_5bpau")
+
+[node name="Options" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -20.0
+offset_right = 89.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="DefineProjectButton" type="Button" parent="MainPanel/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Define New Project"
+
+[node name="ImportPackButton" type="Button" parent="MainPanel/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Import Pack"
+
+[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/Preference/Theme" to="TopMenu" method="_on_theme_index_pressed"]
+[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/Preference/Language" to="TopMenu" method="_on_language_index_pressed"]
+[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/Preference/ProjectFileStyle" to="TopMenu" method="_on_project_file_style_index_pressed"]
+[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/File" to="TopMenu" method="_on_file_index_pressed"]
+[connection signal="pressed" from="ResourceManager/VBoxContainer/Tools/CleanButton" to="ResourceManager" method="_on_clean_button_pressed"]
+[connection signal="pressed" from="ResourceManager/VBoxContainer/Tools/SelectAllButton" to="ResourceManager" method="_on_select_all_button_pressed"]
+[connection signal="pressed" from="ResourceManager/VBoxContainer/Tools/LlaTcelesButton" to="ResourceManager" method="_on_lla_tceles_button_pressed"]
+[connection signal="text_changed" from="ResourceManager/VBoxContainer/Tools/Filter" to="ResourceManager" method="_on_filter_text_changed"]
+[connection signal="multi_selected" from="ResourceManager/VBoxContainer/DefsTree" to="ResourceManager" method="_on_defs_tree_multi_selected"]
+[connection signal="pressed" from="MainPanel/Options/DefineProjectButton" to="MainPanel" method="_on_define_project_button_pressed"]
+[connection signal="pressed" from="MainPanel/Options/ImportPackButton" to="MainPanel" method="_on_import_pack_button_pressed"]

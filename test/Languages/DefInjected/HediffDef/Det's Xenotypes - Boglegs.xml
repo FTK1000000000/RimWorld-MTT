@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Bogleg_FatHediff.label>stored blubber</Bogleg_FatHediff.label>
+    <Bogleg_FatHediff.description>This pawn has large fat stores capable of accumulating usable fat for dealing with starvation.</Bogleg_FatHediff.description>
+    <DV_KnuckleDusters.label>knuckle dusters</DV_KnuckleDusters.label>
+    <DV_KnuckleDusters.description>A pair of metal knuckle dusters. They concentrate the force of a punch into a smaller area, which results in more damage.</DV_KnuckleDusters.description>
+    <DV_KnuckleDusters.comps.0.tools.0.label>knuckles</DV_KnuckleDusters.comps.0.tools.0.label>
+    <DV_KnuckleDusters.comps.0.tools.0.capacities.0>Blunt</DV_KnuckleDusters.comps.0.tools.0.capacities.0>
+    <DV_KnuckleDusters.comps.0.tools.0.power>10</DV_KnuckleDusters.comps.0.tools.0.power>
+    <DV_KnuckleDusters.comps.0.tools.0.soundMeleeHit>MeleeHit_Metal_Blunt</DV_KnuckleDusters.comps.0.tools.0.soundMeleeHit>
+    <DV_KnuckleDusters.comps.0.tools.0.cooldownTime>1.9</DV_KnuckleDusters.comps.0.tools.0.cooldownTime>
+</LanguageData>

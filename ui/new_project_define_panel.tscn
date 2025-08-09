@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://bntfmq0efdsu5"]
+
+[ext_resource type="Script" path="res://script/ui/new_project_define_panel.gd" id="1_2u6ww"]
+[ext_resource type="PackedScene" uid="uid://bpwy2re1yanat" path="res://ui/edit_slot.tscn" id="1_24mlu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c12tk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0m5dl"]
+font_size = 18
+
+[node name="NewProjectDefinePanel" type="Panel"]
+custom_minimum_size = Vector2(672, 508)
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.059
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.139997
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_c12tk")
+script = ExtResource("1_2u6ww")
+
+[node name="Slots" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -14.5
+offset_right = 98.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Slots"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "Pack About"
+label_settings = SubResource("LabelSettings_0m5dl")
+horizontal_alignment = 1
+
+[node name="EditSlot" parent="Slots" instance=ExtResource("1_24mlu")]
+layout_mode = 2
+key = "name"
+item = "name"
+demo = "the.demo"
+defa = "name"
+
+[node name="EditSlot2" parent="Slots" instance=ExtResource("1_24mlu")]
+layout_mode = 2
+key = "description"
+item = "description"
+demo = "the pack description"
+defa = "description"
+
+[node name="EditSlot3" parent="Slots" instance=ExtResource("1_24mlu")]
+layout_mode = 2
+key = "author"
+item = "author"
+demo = "feng1000000000"
+defa = "author"
+
+[node name="EditSlot4" parent="Slots" instance=ExtResource("1_24mlu")]
+layout_mode = 2
+key = "packageId"
+item = "packageId"
+demo = "the.demo.of.mine"
+defa = "the.demo.of.mine"
+
+[node name="EditSlot5" parent="Slots" instance=ExtResource("1_24mlu")]
+layout_mode = 2
+key = "supportedVersions"
+item = "supported versions"
+demo = "1.8, 1.888"
+defa = "2.0"
+
+[node name="EditSlot7" parent="Slots" instance=ExtResource("1_24mlu")]
+layout_mode = 2
+key = "target_languages"
+item = "target languages"
+demo = "target languages"
+
+[node name="EditSlot6" parent="Slots" instance=ExtResource("1_24mlu")]
+layout_mode = 2
+key = "project_path"
+item = "project path"
+demo = "C:\\Users\\Administrator\\Desktop"
+defa = "P:/rimworld-mtt/test/"
+
+[node name="Ation" type="HBoxContainer" parent="Slots"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="CancelButton" type="Button" parent="Slots/Ation"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+text = "Cancel"
+
+[node name="SpawnButton" type="Button" parent="Slots/Ation"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+text = "Spawn File"
+
+[connection signal="pressed" from="Slots/Ation/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="Slots/Ation/SpawnButton" to="." method="_on_spawn_button_pressed"]

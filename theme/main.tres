@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c2elaum8hpcao"]
+
+[ext_resource type="StyleBox" uid="uid://4xhuffyo7lcr" path="res://theme_resource/current/popup_button_hover_and_focus.tres" id="1_0jmme"]
+[ext_resource type="StyleBox" uid="uid://c2sggser3yaff" path="res://theme_resource/current/diff.tres" id="2_wrcin"]
+[ext_resource type="StyleBox" uid="uid://dhpiaqpieaces" path="res://theme_resource/current/main.tres" id="3_tyw4l"]
+[ext_resource type="StyleBox" uid="uid://ckncvmxlrbye3" path="res://theme_resource/current/menu_button_hover_and_focus.tres" id="4_ts12g"]
+[ext_resource type="StyleBox" uid="uid://xncnupe0wl4f" path="res://theme_resource/current/minor.tres" id="5_ebgj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffila"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_54sth"]
+
+[resource]
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+Button/font_sizes/font_size = 18
+Button/styles/focus = ExtResource("1_0jmme")
+Button/styles/hover = ExtResource("1_0jmme")
+Button/styles/normal = ExtResource("2_wrcin")
+Button/styles/pressed = ExtResource("1_0jmme")
+HBoxContainer/constants/separation = 0
+Label/font_sizes/font_size = 12
+LineEdit/font_sizes/font_size = 12
+LineEdit/styles/focus = ExtResource("3_tyw4l")
+LineEdit/styles/normal = ExtResource("3_tyw4l")
+LineEdit/styles/read_only = ExtResource("3_tyw4l")
+MenuBar/font_sizes/font_size = 12
+MenuBar/styles/hover = ExtResource("4_ts12g")
+MenuBar/styles/normal = SubResource("StyleBoxEmpty_ffila")
+MenuBar/styles/pressed = ExtResource("4_ts12g")
+Panel/styles/panel = ExtResource("5_ebgj1")
+PopupMenu/font_sizes/font_separator_size = 12
+PopupMenu/font_sizes/font_size = 12
+PopupMenu/font_sizes/title_font_size = 12
+PopupMenu/styles/hover = ExtResource("1_0jmme")
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = ExtResource("5_ebgj1")
+PopupMenu/styles/separator = null
+Tree/font_sizes/font_size = 12
+Tree/styles/focus = SubResource("StyleBoxEmpty_54sth")
+Tree/styles/selected = ExtResource("2_wrcin")
+Tree/styles/selected_focus = ExtResource("1_0jmme")
+VBoxContainer/constants/separation = 0

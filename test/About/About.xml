@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>name</name>
+    <description>description</description>
+    <author>author</author>
+    <packageId>the.demo.of.mine</packageId>
+    <supportedVersions>
+        <li>2.0</li>
+    </supportedVersions>
+</ModMetaData>

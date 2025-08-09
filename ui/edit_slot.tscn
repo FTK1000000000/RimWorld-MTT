@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpwy2re1yanat"]
+
+[ext_resource type="Script" path="res://script/class/EditSlot.cs" id="1_212qu"]
+
+[node name="EditSlot" type="HBoxContainer"]
+custom_minimum_size = Vector2(480, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_212qu")
+
+[node name="Option" type="Label" parent="."]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 3
