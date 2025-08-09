@@ -15,4 +15,4 @@ func _on_define_project_button_pressed() -> void:
 
 
 func _on_import_pack_button_pressed() -> void:
-	Global.file_dialog.show()
+	Global.file_import.show()

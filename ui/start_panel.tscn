@@ -1,40 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://brgjl2jui0nlu"]
+[gd_scene load_steps=8 format=3 uid="uid://brgjl2jui0nlu"]
 
-[ext_resource type="Theme" uid="uid://c2elaum8hpcao" path="res://theme/main.tres" id="1_w2yu0"]
+[ext_resource type="Theme" uid="uid://c2elaum8hpcao" path="res://theme/dark.tres" id="1_w2yu0"]
 [ext_resource type="Script" path="res://script/ui/top_menu.gd" id="3_8pud3"]
-[ext_resource type="StyleBox" uid="uid://dhpiaqpieaces" path="res://theme_resource/current/main.tres" id="4_trjwe"]
-[ext_resource type="Script" path="res://script/ui/resource_manager.gd" id="5_kerkt"]
-[ext_resource type="Theme" uid="uid://dsforg8tra7c3" path="res://theme/small_button.tres" id="6_2r6y7"]
-[ext_resource type="StyleBox" uid="uid://xncnupe0wl4f" path="res://theme_resource/current/minor.tres" id="6_okk0b"]
+[ext_resource type="Script" path="res://script/ui/start_panel.gd" id="3_qhris"]
+[ext_resource type="Script" path="res://script/ui/definetion_manager.gd" id="5_kerkt"]
 [ext_resource type="Script" path="res://script/ui/main_panel.gd" id="7_5bpau"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gghis"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cjwsr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4t4xj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_720st"]
 
-[node name="StartPanel" type="Panel"]
+[node name="StartPanel" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_w2yu0")
-theme_override_styles/panel = ExtResource("4_trjwe")
+script = ExtResource("3_qhris")
 metadata/_edit_vertical_guides_ = [288.0]
 metadata/_edit_horizontal_guides_ = [32.0]
 
-[node name="TopMenu" type="Panel" parent="."]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_gghis")
-script = ExtResource("3_8pud3")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TopMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,25 +30,63 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuBar" type="MenuBar" parent="TopMenu/VBoxContainer"]
+[node name="Control" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cjwsr")
 
-[node name="Preference" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar"]
-item_count = 3
+[node name="TopMeneBackgroudPanel" type="PanelContainer" parent="VBoxContainer/Control"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="TopMenu" type="Panel" parent="VBoxContainer/Control"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_720st")
+script = ExtResource("3_8pud3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/TopMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBar" type="MenuBar" parent="VBoxContainer/Control/TopMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Preference" type="PopupMenu" parent="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar"]
+item_count = 4
 item_0/text = "Theme"
-item_1/text = "language"
-item_1/id = 1
-item_2/text = "Project file style"
-item_2/id = 2
+item_1/text = "Project file style"
+item_1/id = 2
+item_2/text = "Definetion manage pack node text"
+item_2/id = 3
+item_3/text = "language"
+item_3/id = 1
 
-[node name="Theme" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar/Preference"]
+[node name="Theme" type="PopupMenu" parent="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference"]
 item_count = 2
 item_0/text = "Dark"
 item_1/text = "Light"
 item_1/id = 1
 
-[node name="Language" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar/Preference"]
+[node name="ProjectFileStyle" type="PopupMenu" parent="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference"]
+item_count = 2
+item_0/text = "Tight"
+item_0/disabled = true
+item_1/text = "Loose"
+item_1/id = 1
+item_1/disabled = true
+
+[node name="DefinetionManagePackNodeText" type="PopupMenu" parent="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference"]
+item_count = 2
+item_0/text = "Pack name"
+item_1/text = "Pack ID"
+item_1/id = 1
+
+[node name="Language" type="PopupMenu" parent="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference"]
 auto_translate_mode = 1
 item_count = 3
 item_0/text = "English"
@@ -69,13 +95,7 @@ item_1/id = 1
 item_2/text = "简体中文"
 item_2/id = 2
 
-[node name="ProjectFileStyle" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar/Preference"]
-item_count = 2
-item_0/text = "Tight"
-item_1/text = "Loose"
-item_1/id = 1
-
-[node name="File" type="PopupMenu" parent="TopMenu/VBoxContainer/MenuBar"]
+[node name="File" type="PopupMenu" parent="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar"]
 item_count = 4
 item_0/text = "Import pack"
 item_1/text = "Open config folder"
@@ -85,99 +105,72 @@ item_2/id = 2
 item_3/text = "Open local mods folder"
 item_3/id = 3
 
-[node name="ColorRect" type="ColorRect" parent="TopMenu/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control/TopMenu/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
-color = Color(0.301961, 0.301961, 0.301961, 1)
+size_flags_vertical = 10
+color = Color(0.5, 0.5, 0.5, 1)
 
-[node name="ResourceManager" type="Panel" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DefinetionManager" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(288, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.059
-anchor_right = 0.3
-anchor_bottom = 1.0
-offset_top = 0.139997
-grow_vertical = 0
-theme_override_styles/panel = ExtResource("6_okk0b")
-script = ExtResource("5_kerkt")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ResourceManager"]
 layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 2
+script = ExtResource("5_kerkt")
+metadata/_edit_use_anchors_ = true
 
-[node name="Tools" type="HBoxContainer" parent="ResourceManager/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/DefinetionManager"]
+layout_mode = 2
+
+[node name="Tools" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="CleanButton" type="Button" parent="ResourceManager/VBoxContainer/Tools"]
+[node name="CleanButton" type="Button" parent="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools"]
 layout_mode = 2
-theme = ExtResource("6_2r6y7")
+theme_override_font_sizes/font_size = 12
 text = "Clean"
 
-[node name="SelectAllButton" type="Button" parent="ResourceManager/VBoxContainer/Tools"]
+[node name="SelectAllButton" type="Button" parent="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools"]
 layout_mode = 2
-theme = ExtResource("6_2r6y7")
+theme_override_font_sizes/font_size = 12
 text = "Select all"
 
-[node name="LlaTcelesButton" type="Button" parent="ResourceManager/VBoxContainer/Tools"]
+[node name="LlaTcelesButton" type="Button" parent="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools"]
 layout_mode = 2
-theme = ExtResource("6_2r6y7")
+theme_override_font_sizes/font_size = 12
 text = "lla tceleS"
 
-[node name="Filter" type="LineEdit" parent="ResourceManager/VBoxContainer/Tools"]
+[node name="Filter" type="LineEdit" parent="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools"]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Filter"
 
-[node name="DefsTree" type="Tree" parent="ResourceManager/VBoxContainer"]
+[node name="DefsTree" type="Tree" parent="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 allow_reselect = true
 hide_root = true
-select_mode = 2
 
-[node name="Tip" type="Label" parent="ResourceManager"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.5
-offset_top = -18.5
-offset_right = 102.5
-offset_bottom = 18.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "You can import pack directory by drop to the window."
+[node name="Tip" type="Label" parent="VBoxContainer/HBoxContainer/DefinetionManager"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+text = "tips"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="MainPanel" type="Panel" parent="."]
-custom_minimum_size = Vector2(640, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.059
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 0.139997
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_4t4xj")
+[node name="MainPanel" type="Panel" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("7_5bpau")
+metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="VBoxContainer" parent="MainPanel"]
+[node name="Options" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MainPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -185,33 +178,36 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -89.5
-offset_top = -20.0
+offset_top = -41.0
 offset_right = 89.5
-offset_bottom = 20.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 6
 
-[node name="DefineProjectButton" type="Button" parent="MainPanel/Options"]
+[node name="DefineProjectButton" type="Button" parent="VBoxContainer/HBoxContainer/MainPanel/Options"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Define New Project"
 
-[node name="ImportPackButton" type="Button" parent="MainPanel/Options"]
+[node name="ImportPackButton" type="Button" parent="VBoxContainer/HBoxContainer/MainPanel/Options"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Import Pack"
 
-[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/Preference/Theme" to="TopMenu" method="_on_theme_index_pressed"]
-[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/Preference/Language" to="TopMenu" method="_on_language_index_pressed"]
-[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/Preference/ProjectFileStyle" to="TopMenu" method="_on_project_file_style_index_pressed"]
-[connection signal="index_pressed" from="TopMenu/VBoxContainer/MenuBar/File" to="TopMenu" method="_on_file_index_pressed"]
-[connection signal="pressed" from="ResourceManager/VBoxContainer/Tools/CleanButton" to="ResourceManager" method="_on_clean_button_pressed"]
-[connection signal="pressed" from="ResourceManager/VBoxContainer/Tools/SelectAllButton" to="ResourceManager" method="_on_select_all_button_pressed"]
-[connection signal="pressed" from="ResourceManager/VBoxContainer/Tools/LlaTcelesButton" to="ResourceManager" method="_on_lla_tceles_button_pressed"]
-[connection signal="text_changed" from="ResourceManager/VBoxContainer/Tools/Filter" to="ResourceManager" method="_on_filter_text_changed"]
-[connection signal="multi_selected" from="ResourceManager/VBoxContainer/DefsTree" to="ResourceManager" method="_on_defs_tree_multi_selected"]
-[connection signal="pressed" from="MainPanel/Options/DefineProjectButton" to="MainPanel" method="_on_define_project_button_pressed"]
-[connection signal="pressed" from="MainPanel/Options/ImportPackButton" to="MainPanel" method="_on_import_pack_button_pressed"]
+[connection signal="index_pressed" from="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference/Theme" to="VBoxContainer/Control/TopMenu" method="_on_theme_index_pressed"]
+[connection signal="index_pressed" from="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference/ProjectFileStyle" to="VBoxContainer/Control/TopMenu" method="_on_project_file_style_index_pressed"]
+[connection signal="index_pressed" from="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference/DefinetionManagePackNodeText" to="VBoxContainer/Control/TopMenu" method="_on_definetion_manager_index_pressed"]
+[connection signal="index_pressed" from="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/Preference/Language" to="VBoxContainer/Control/TopMenu" method="_on_language_index_pressed"]
+[connection signal="index_pressed" from="VBoxContainer/Control/TopMenu/VBoxContainer/MenuBar/File" to="VBoxContainer/Control/TopMenu" method="_on_file_index_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools/CleanButton" to="VBoxContainer/HBoxContainer/DefinetionManager" method="_on_clean_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools/SelectAllButton" to="VBoxContainer/HBoxContainer/DefinetionManager" method="_on_select_all_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools/LlaTcelesButton" to="VBoxContainer/HBoxContainer/DefinetionManager" method="_on_lla_tceles_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/Tools/Filter" to="VBoxContainer/HBoxContainer/DefinetionManager" method="_on_filter_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/DefinetionManager/VBoxContainer/DefsTree" to="VBoxContainer/HBoxContainer/DefinetionManager" method="_on_defs_tree_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MainPanel/Options/DefineProjectButton" to="VBoxContainer/HBoxContainer/MainPanel" method="_on_define_project_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MainPanel/Options/ImportPackButton" to="VBoxContainer/HBoxContainer/MainPanel" method="_on_import_pack_button_pressed"]

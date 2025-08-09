@@ -5,10 +5,22 @@
 [node name="Global" type="Node"]
 script = ExtResource("1_4xkk4")
 
-[node name="FileDialog" type="FileDialog" parent="."]
+[node name="FileImport" type="FileDialog" parent="."]
 auto_translate_mode = 1
 title = "Open a Directory"
-size = Vector2i(289, 202)
+size = Vector2i(352, 180)
+ok_button_text = "Select Current Folder"
+dialog_hide_on_ok = true
+dialog_close_on_escape = false
+file_mode = 2
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+
+[node name="PathAssign" type="FileDialog" parent="."]
+auto_translate_mode = 1
+title = "Open a Directory"
+size = Vector2i(352, 180)
 ok_button_text = "Select Current Folder"
 dialog_hide_on_ok = true
 dialog_close_on_escape = false
@@ -18,4 +30,4 @@ show_hidden_files = true
 use_native_dialog = true
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]
+[connection signal="dir_selected" from="FileImport" to="." method="_on_file_dialog_dir_selected"]

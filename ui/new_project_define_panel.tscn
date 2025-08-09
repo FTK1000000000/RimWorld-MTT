@@ -10,13 +10,10 @@ font_size = 18
 
 [node name="NewProjectDefinePanel" type="Panel"]
 custom_minimum_size = Vector2(672, 508)
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.059
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 0.139997
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_c12tk")
 script = ExtResource("1_2u6ww")
@@ -53,7 +50,7 @@ defa = "name"
 layout_mode = 2
 key = "description"
 item = "description"
-demo = "the pack description"
+demo = "this is the description for the pack of the demo for the demo"
 defa = "description"
 
 [node name="EditSlot3" parent="Slots" instance=ExtResource("1_24mlu")]
@@ -67,15 +64,15 @@ defa = "author"
 layout_mode = 2
 key = "packageId"
 item = "packageId"
-demo = "the.demo.of.mine"
-defa = "the.demo.of.mine"
+demo = "feng1000000000.something.demo"
+defa = "feng1000000000.something.demo"
 
 [node name="EditSlot5" parent="Slots" instance=ExtResource("1_24mlu")]
 layout_mode = 2
 key = "supportedVersions"
 item = "supported versions"
-demo = "1.8, 1.888"
-defa = "2.0"
+demo = "1.8, 1.9,1.173"
+defa = "1.6"
 
 [node name="EditSlot7" parent="Slots" instance=ExtResource("1_24mlu")]
 layout_mode = 2

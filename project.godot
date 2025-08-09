@@ -12,6 +12,7 @@ config_version=5
 
 config/name="RimWorld-MTT"
 config/description="RimWorld Mod Translator Tool
+Herramienta de traducción para RimWorld Mod
 环世界模组译者工具"
 run/main_scene="res://ui/start_panel.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
@@ -24,7 +25,6 @@ Global="*res://global.tscn"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
-window/size/always_on_top=true
 
 [dotnet]
 
@@ -32,4 +32,7 @@ project/assembly_name="RimWorld-MTT"
 
 [internationalization]
 
-locale/locale_filter_mode=1
+locale/translation_remaps={
+"res://lang/lang.csv": PackedStringArray()
+}
+locale/translations=PackedStringArray("res://lang/lang.en.translation", "res://lang/lang.es.translation", "res://lang/lang.zh.translation")

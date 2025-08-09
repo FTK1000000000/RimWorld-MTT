@@ -165,10 +165,10 @@ func pack_generator(
 				var tag: XMLNode = XMLNode.new()
 				var value = meta_tags.get(key)
 				if !value is String:
-					for str: String in value:
+					for v: String in value:
 						var node: XMLNode = XMLNode.new()
 						node.name = "li"
-						node.content = str
+						node.content = v
 						tag.children.append(node)
 				elif key == "supportedVersions":
 					var node: XMLNode = XMLNode.new()
@@ -242,3 +242,6 @@ func pack_generator(
 					file.store_string(define_head_tag())
 					file.store_string(apis_xml.dump_str(true, 0, 4))
 					file.flush()
+		
+		#finished
+		OS.alert(tr("Create finished"), tr("Create finished"))

@@ -1,0 +1,49 @@
+id,en,es,zh
+Define New Project,Define New Project,Definir nuevo proyecto,定义新项目
+Import Pack,Import Pack,Paquete de importación,导入包
+,,,
+,,,
+tips,You can import pack directory by drop to the window.\n\n Definetion manage just allowed mouse,Tú puedes importar el directorio del paquete arrastrándolo a la ventana.\n\n La gestión de definiciones solo permite el uso del ratón.,你可以通过拖动目录到窗口中来导入包
+Clean,Clean,limpio,清理
+Select all,Select all,Seleccionar todo,全选
+lla tceleS,lla tceleS,odot ranojcceleS,选全
+Filter,Filter,Filtro,过滤器
+,,,
+,,,
+Preference,Preference,preferencia,偏好
+Theme,Theme,tema,主题
+Dark,Dark,oscuro,暗色
+Light,Light,luz,亮色
+,,,
+Project file style,Project File Style,Estilo del archivo del proyecto,项目文件风格
+Tight,Tight,Apretado,紧凑
+Loose,Loose,Suelto,松散
+,,,
+Definetion manage pack node text,Definetion manage pack node text,Definición del texto del nodo del paquete de administración,定义管理器包节点文本
+Pack name,Pack name,nombre del paquete,包名称
+Pack ID,Pack ID,ID del paquete,包编号
+,,,
+language,Language,Idioma,语言
+,,,
+,,,
+File,File,archivo,文件
+Import pack,Import pack,paquete de importación,导入包
+Open config folder,Open config folder,Abrir carpeta de configuración,打开配置文件夹
+Open steam mods folder,Open steam mods folder,Abrir la carpeta de mods de Steam,打开steam模组文件夹
+Open local mods folder,Open local mods folder,Abrir la carpeta de mods local,打开本地模组文件夹
+,,,
+,,,
+Pack About,Pack About,Acerca de Paquete, 包概要
+,,,
+name,name,nombre,名称
+description,description,descripción,描述
+author,author,autor,作者
+packageId,packageId,ID del paquete,编号
+supported versions,supported versions,versiones compatibles,支持的版本
+target languages,target languages,idiomas de destino,目标语言
+project path,project path,ruta del proyecto,项目路径
+,,,
+Cancel,Cancel,cancelar,取消
+Spawn File,Spawn File,archivo de generación,生成文件
+,,,
+Create finished,Create finished,Crear terminado,创建结束
