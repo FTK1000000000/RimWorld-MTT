@@ -48,8 +48,8 @@ func change_theme(index: int):
 	for path: String in FileFunction.get_file_list(CURRENT_THEME_DIR):
 		var file = FileAccess.open(path, FileAccess.WRITE)
 		var target_file = FileAccess.open(target_theme.get(path), FileAccess.READ)
-		file.store_string(target_file.get_as_text())
-		file.flush()
+		#file.store_string(target_file.get_as_text())
+		#file.flush()
 		#print(target_file.get_as_text())
 		print(file.get_as_text())
 		pass
