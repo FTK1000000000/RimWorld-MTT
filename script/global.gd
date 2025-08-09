@@ -59,11 +59,9 @@ func add_pack(paths: Array[String]):
 		packs.append(pack_generator.parse_pack(path))
 	packs_change.emit(packs)
 
-func project_generator(project_config: Dictionary):
+func project_generator(project_config: Dictionary, languages: Array[String]):
 	var project_path = project_config.get("project_path")
 	project_config.erase("project_path")
-	var languages = project_config.get("target_languages")
-	project_config.erase("target_languages")
 	
 	var filtered_packs: Array[Pack]
 	for pack: Pack in packs:
@@ -76,7 +74,7 @@ func project_generator(project_config: Dictionary):
 		
 		filtered_packs.append(filtered_pack)
 	
-	pack_generator.pack_generator(filtered_packs, project_config, [languages], project_path)
+	pack_generator.pack_generator(filtered_packs, project_config, languages, project_path)
 
 func set_steam_mods_dir_path(path):
 	steam_mods_dir_path = path

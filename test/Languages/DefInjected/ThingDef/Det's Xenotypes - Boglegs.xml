@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-    <DV_Proj_Muck.label>muck</DV_Proj_Muck.label>
-    <DV_TongoTable.label>tongo table</DV_TongoTable.label>
-    <DV_TongoTable.description>A table designed for playing tongo. A complex, strategic game involving risking silver to buy-in into ventures like confronting or retreating.\n\nThe game originates on Avaris, the home planet of boglegs, and it is so complex that no computer has been able to properly play it to this day.\n\nThis building requires adjacent chairs or stools to use.</DV_TongoTable.description>
-    <DV_Handwear_KnuckleDusters.label>knuckle dusters</DV_Handwear_KnuckleDusters.label>
-    <DV_Handwear_KnuckleDusters.description>A pair of metal knuckle dusters. They concentrate the force of a punch into a smaller area, which results in more damage.</DV_Handwear_KnuckleDusters.description>
-    <DV_MuckPool.label>muck pool</DV_MuckPool.label>
-</LanguageData>

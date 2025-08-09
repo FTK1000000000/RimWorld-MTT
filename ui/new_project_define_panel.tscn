@@ -20,15 +20,14 @@ script = ExtResource("1_2u6ww")
 
 [node name="Slots" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -14.5
-offset_right = 98.0
-offset_bottom = 14.5
+anchor_bottom = 1.0
+offset_left = -242.0
+offset_top = 51.0
+offset_right = 242.0
+offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -74,23 +73,31 @@ item = "supported versions"
 demo = "1.8, 1.9,1.173"
 defa = "1.6"
 
-[node name="EditSlot7" parent="Slots" instance=ExtResource("1_24mlu")]
-layout_mode = 2
-key = "target_languages"
-item = "target languages"
-demo = "target languages"
-
 [node name="EditSlot6" parent="Slots" instance=ExtResource("1_24mlu")]
 layout_mode = 2
 key = "project_path"
 item = "project path"
 demo = "C:\\Users\\Administrator\\Desktop"
-defa = "P:/rimworld-mtt/test/"
+defa = "C:\\Users\\Administrator\\Desktop"
+
+[node name="OptionalTargetLanguages" type="Label" parent="Slots"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "optional targrt languages"
+vertical_alignment = 1
+
+[node name="lLanguageTree" type="Tree" parent="Slots"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
 
 [node name="Ation" type="HBoxContainer" parent="Slots"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 0
 
 [node name="CancelButton" type="Button" parent="Slots/Ation"]
 layout_mode = 2
@@ -100,7 +107,7 @@ text = "Cancel"
 
 [node name="SpawnButton" type="Button" parent="Slots/Ation"]
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 6
 size_flags_vertical = 8
 text = "Spawn File"
 

@@ -151,7 +151,7 @@ func pack_generator(
 	packs: Array[Pack],
 	meta_tags: Dictionary,
 	languages: Array[String],
-	project_path: String = "P:/rimworld-mtt/test"
+	project_path: String
 	):
 		for pack: Pack in packs:
 			if !DirAccess.dir_exists_absolute(project_path):
@@ -184,7 +184,7 @@ func pack_generator(
 			file = FileAccess.open(dir.get_current_dir() + "/About.xml", FileAccess.WRITE)
 			file.store_string(define_head_tag())
 			file.store_string(about_xml.dump_str(true, 0, 4))
-			file.flush()
+			#file.flush()
 			
 			#Defs
 			var lang_path = "/Languages/%s"
@@ -223,7 +223,7 @@ func pack_generator(
 						file = FileAccess.open(def_dir_path + "/" + def_type + "/" + pack_name + ".xml", FileAccess.WRITE)
 						file.store_string(define_head_tag())
 						file.store_string(defs_xml.dump_str(true, 0, 4))
-						file.flush()
+						#file.flush()
 						#print(defs_xml.dump_str(true, 0, 4))
 			
 			#Class Apis
@@ -241,7 +241,7 @@ func pack_generator(
 					file = FileAccess.open(dir.get_current_dir() + "/" + pack_name + ".xml", FileAccess.WRITE)
 					file.store_string(define_head_tag())
 					file.store_string(apis_xml.dump_str(true, 0, 4))
-					file.flush()
+					file.close()
 		
 		#finished
 		OS.alert(tr("Create finished"), tr("Create finished"))

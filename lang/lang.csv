@@ -42,8 +42,11 @@ packageId,packageId,ID del paquete,编号
 supported versions,supported versions,versiones compatibles,支持的版本
 target languages,target languages,idiomas de destino,目标语言
 project path,project path,ruta del proyecto,项目路径
+optional targrt languages,optional targrt languages,Idiomas de destino opcionales,可选目标语言
 ,,,
 Cancel,Cancel,cancelar,取消
 Spawn File,Spawn File,archivo de generación,生成文件
 ,,,
+,,,
 Create finished,Create finished,Crear terminado,创建结束
+Not have selected language,Not have selected language,No ha seleccionado ningún idioma.,没有已选语言
