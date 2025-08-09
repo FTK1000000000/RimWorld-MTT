@@ -14,8 +14,10 @@ config/name="RimWorld-MTT"
 config/description="RimWorld Mod Translator Tool
 Herramienta de traducción para RimWorld Mod
 环世界模组译者工具"
+config/version="1"
 run/main_scene="res://ui/start_panel.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+boot_splash/image="res://icon.ico"
 
 [autoload]
 
