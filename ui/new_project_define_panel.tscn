@@ -78,7 +78,7 @@ layout_mode = 2
 key = "project_path"
 item = "project path"
 demo = "C:\\Users\\Administrator\\Desktop"
-defa = "C:\\Users\\Administrator\\Desktop"
+defa = "C:\\Users\\Administrator\\Desktop\\the pack from Rimworld-MTT"
 
 [node name="OptionalTargetLanguages" type="Label" parent="Slots"]
 custom_minimum_size = Vector2(0, 64)

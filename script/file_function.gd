@@ -52,3 +52,10 @@ static func get_file_name_list(path: String, extension: bool = true) -> Dictiona
 static func json_as_dictionary(path: String) -> Dictionary:
 	var data = JSON.parse_string(FileAccess.open(path, FileAccess.READ).get_as_text()) as Dictionary
 	return data
+
+static func get_exefile_dir_path(path: String = "") -> String:
+	var exe_path = OS.get_executable_path()
+	return exe_path.erase(
+		exe_path.findn(ProjectSettings.get_setting("application/config/name")),
+		exe_path.length()
+		) + path

@@ -17,7 +17,7 @@ Herramienta de traducción para RimWorld Mod
 config/version="1"
 run/main_scene="res://ui/start_panel.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-boot_splash/image="res://icon.ico"
+config/icon="res://icon.png"
 
 [autoload]
 

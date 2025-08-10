@@ -1,0 +1,26 @@
+{
+    "needed_translate_tags": [
+        "label",
+        "description",
+        "labelTendedWell",
+        "labelTendedWellInner",
+        "labelSolidTendedWell",
+        "permanentLabel",
+        "destroyedLabel",
+        "destroyedOutLabel",
+        "pawnSingular",
+        "pawnsPlural",
+        "ideoName",
+        "ideoDescription",
+        "name",
+        "type",
+        "customEffectDescriptions",
+        "labelNoun",
+        "reportString",
+        "descriptionShort",
+        "rulePack"
+    ],
+    "maybe_children_have_needed_translate_tags": [
+        "comps"
+    ]
+}

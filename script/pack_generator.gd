@@ -215,8 +215,12 @@ func pack_generator(
 					for def_type: String in def_types.keys():
 						var defs_xml: XMLNode = XMLNode.new()
 						defs_xml.name = ROOT_TAG[ROOT_TAG_INDEX.LanguageData]
-						for def: Dictionary in def_types.get(def_type):
-							defs_xml.children.append_array(def_dic_to_xml(def.values()[0], def.keys()[0]))
+						
+						var defs: Array = def_types.get(def_type)
+						for def: Dictionary in defs:
+							var nodes: Array[XMLNode] = def_dic_to_xml(def.values()[0], def.keys()[0])
+							nodes.append(NoneLineNode.new())
+							defs_xml.children.append_array(nodes)
 						
 						make_and_open(def_dir_path + "/" + def_type)
 						var pack_name = pack.about.name
