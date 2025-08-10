@@ -29,7 +29,7 @@ var theme_index: int:
 	set(v):
 		theme_index = v
 		
-		theme = load(FileFunction.get_file_list(FileFunction.get_exefile_dir_path("theme/")).values()[v])
+		theme = load(FileFunction.get_file_list(FileFunction.get_exefile_dir_path("/theme/")).values()[v])
 		theme_change.emit(theme)
 var language_index: int:
 	set(v):
@@ -97,7 +97,7 @@ func config_save():
 func config_load():
 	var config = ConfigFile.new()
 	#var file = config.load(PREFERENCE_PATH)
-	var file = config.load(FileFunction.get_exefile_dir_path("config/preference.ini"))
+	var file = config.load(FileFunction.get_exefile_dir_path("/config/preference.ini"))
 	
 	if file != OK:
 		return

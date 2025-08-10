@@ -55,7 +55,4 @@ static func json_as_dictionary(path: String) -> Dictionary:
 
 static func get_exefile_dir_path(path: String = "") -> String:
 	var exe_path = OS.get_executable_path()
-	return exe_path.erase(
-		exe_path.findn(ProjectSettings.get_setting("application/config/name")),
-		exe_path.length()
-		) + path
+	return exe_path.get_base_dir() + path
