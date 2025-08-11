@@ -18,7 +18,7 @@ var file: FileAccess
 
 
 func _init() -> void:
-	var tag_rule_for_define: Dictionary = FileFunction.json_as_dictionary("res://config/tag_rule_for_define.json")
+	var tag_rule_for_define: Dictionary = FileFunction.json_as_dictionary(FileFunction.get_exefile_dir_path("/config/tag_rule_for_define.json"))
 	needed_translate_tags.append_array(tag_rule_for_define.needed_translate_tags)
 	maybe_children_have_needed_translate_tags.append_array(tag_rule_for_define.maybe_children_have_needed_translate_tags)
 

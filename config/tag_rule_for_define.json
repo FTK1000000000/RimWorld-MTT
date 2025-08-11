@@ -18,9 +18,15 @@
         "labelNoun",
         "reportString",
         "descriptionShort",
-        "rulePack"
+        "rulePack",
+
+        "ingestCommandString",
+        "ingestReportString"
     ],
     "maybe_children_have_needed_translate_tags": [
-        "comps"
+        "comps",
+        "stages",
+
+        "ingestible"
     ]
 }
