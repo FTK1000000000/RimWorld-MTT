@@ -1,4 +1,4 @@
-#way
+# way
 
 import pack
 edit about file contents
