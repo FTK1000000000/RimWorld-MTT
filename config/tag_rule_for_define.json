@@ -23,7 +23,7 @@
         "ingestCommandString",
         "ingestReportString",
         "discoveredLetterText",
-        "spawnOnInteractionCell"
+        "labelOverride"
     ],
     "maybe_children_have_needed_translate_tags": [
         "comps",
