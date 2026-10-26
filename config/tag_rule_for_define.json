@@ -2,6 +2,9 @@
     "needed_translate_tags": [
         "label",
         "description",
+        "labelMale",
+        "labelFemale",
+        "labelPlural",
         "labelTendedWell",
         "labelTendedWellInner",
         "labelSolidTendedWell",
