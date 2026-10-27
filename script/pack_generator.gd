@@ -55,7 +55,9 @@ func parse_pack(path: String) -> Pack:
 	#define defs directory position
 	var defs: Array[Dictionary]
 	var defs_dir: String
-	if DirAccess.dir_exists_absolute(path + "/Common"):
+	if DirAccess.dir_exists_absolute(path + "/Defs"):
+		defs_dir = path + "/Defs"
+	elif DirAccess.dir_exists_absolute(path + "/Common"):
 		defs_dir = path + "/Common/Defs"
 	else:
 		var ver: float
